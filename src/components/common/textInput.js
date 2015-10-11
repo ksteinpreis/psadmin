@@ -15,12 +15,13 @@ var Input = React.createClass({
         },
 
     render: function() {
-        var wrapperClass="form-group";
+        var wrapperClass="form-group col-lg-2 col-md-3 col-sm-5 col-xs-10";
         if(this.props.error && this.props.error.length >0) {
             wrapperClass += " " + 'has-error';
         }
 
         return (
+            <div className="row">
             <div className={wrapperClass}>
                 <label htmlFor={this.props.name}>{this.props.label}</label>
                 <div className="field">
@@ -33,6 +34,7 @@ var Input = React.createClass({
                         onChange={this.props.onChange} />
                     <div className="input">{this.props.error}</div>
                 </div>
+            </div>
             </div>
         );
     }
